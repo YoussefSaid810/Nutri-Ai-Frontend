@@ -1,0 +1,36 @@
+.TabController .btnCTRLs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.TabController .btnCTRLs button {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.TabController .btnCTRLs button.active {
+    background-color: var(--theme-color);
+    color: var(--txt-L3-color);
+}
+
+.TabController .TabViewer .Tab {
+    padding-top: 2rem;
+    max-height: 80svh;
+    overflow-y: auto;
+}
+
+@media (width <= 700px) {
+    .TabController .TabViewer .Tab {
+        max-height: 90svh;
+    }
+    .TabController .btnCTRLs button {
+        font-size: 0.8rem;
+    }
+}

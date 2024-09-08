@@ -1,0 +1,14 @@
+.headline {
+    text-align: center;
+    margin-block: 0 2rem;
+    color: var(--txt-L2-color);
+
+    h2 {
+        font-size: 3rem;
+        text-transform: capitalize;
+    }
+
+    p {
+        text-transform: capitalize;
+    }
+}

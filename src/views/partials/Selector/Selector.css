@@ -1,0 +1,60 @@
+.Selector {
+    position: relative;
+    background-color: var(--bg-L2-color);
+    color: var(--txt-L2-color);
+    border: 3px solid currentColor;
+    text-transform: capitalize;
+    width: 100%;
+
+    .view {
+        position: relative;
+        inset: 0;
+        z-index: 2;
+        padding: 5px 20px;
+        padding-inline-end: 4rem;
+        background-color: inherit;
+        pointer-events: none;
+    }
+
+    .name {
+        font-weight: 700;
+        font-size: 0.8em;
+    }
+
+    .viewVal {
+        font-weight: 300;
+        font-size: 1em;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        inset-inline-end: 20px;
+        translate: 0 -50%;
+    }
+
+    select {
+        cursor: pointer;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        border: none;
+        outline: none;
+
+        option {
+            margin: 40px;
+            background: inherit;
+            color: inherit;
+            text-transform: capitalize;
+
+            &:checked {
+                background-color: var(--theme-color) !important;
+                color: var(--secondary-color);
+            }
+        }
+    }
+}

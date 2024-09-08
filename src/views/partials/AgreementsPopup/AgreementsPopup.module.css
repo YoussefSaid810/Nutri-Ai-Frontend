@@ -1,0 +1,75 @@
+.popup {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.664);
+}
+
+.innerPopup {
+    position: relative;
+    background-color: var(--model-bg-color);
+    color: inherit;
+    text-align: center;
+    padding: 5rem 3rem 4rem;
+    width: 50svw;
+    border-radius: 15px;
+}
+
+.innerPopup .icon {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    aspect-ratio: 1/1;
+    padding: 30px;
+    border: 3px dashed currentColor;
+    border-radius: 50%;
+    color: var(--theme-color);
+}
+
+.innerPopup h3 {
+    font-size: 2rem;
+}
+
+.innerPopup .footerBTNs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.innerPopup .footerBTNs button {
+    padding: 25px 100px;
+    background-color: var(--theme-color);
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.innerPopup .footerBTNs button:last-child {
+    background-color: var(--bg-L2-color);
+    color: var(--txt-L1-color);
+}
+
+@media (width <= 1024px) {
+    .innerPopup {
+        width: 80svw;
+    }
+}
+
+@media (width <= 700px) {
+    .innerPopup .footerBTNs {
+        margin-top: 40px;
+    }
+    .innerPopup .footerBTNs button {
+        padding: 15px;
+        width: 100%;
+    }
+}

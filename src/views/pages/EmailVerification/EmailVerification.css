@@ -1,0 +1,120 @@
+.VerifyEmail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    gap: 10px;
+
+    h2 {
+        font-size: 3rem;
+        color: var(--theme-color);
+        font-weight: 700;
+    }
+
+    p {
+        white-space: wrap;
+        font-weight: 400;
+        margin: 10px 0;
+    }
+
+    .frmINP {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+
+        .otpCont {
+            display: grid !important;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 5px;
+        }
+
+        .otpINP {
+            aspect-ratio: 1/1;
+            width: 50px !important;
+            font-size: 1.5rem;
+            color: #333;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            box-shadow: 0 0 5px 5px #00000015;
+
+            &:nth-child(4) {
+                margin-inline-end: 40px;
+            }
+        }
+
+        .separator {
+            margin: 0 8px;
+        }
+        .separator:nth-child(8) {
+            margin: 0 20px;
+            opacity: 0;
+        }
+    }
+    .submission {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 20px;
+
+        button {
+            background-color: var(--theme-color);
+            padding: 15px 30px;
+            font-weight: 600;
+            color: #fff;
+            border-radius: 50px;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            width: 40%;
+            text-transform: capitalize;
+
+            &.resend {
+                background-color: #cecece;
+                color: #555;
+
+                span {
+                    display: none;
+                }
+
+                &.disabled {
+                    cursor: default;
+                    color: #999;
+
+                    span {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (width<600px) {
+    .VerifyEmail {
+        .frmINP {
+            .otpCont {
+                grid-template-columns: repeat(4, 1fr);
+                align-items: center;
+                gap: 20px;
+            }
+
+            .otpINP {
+                &:nth-child(4) {
+                    margin-inline-end: 0px;
+                }
+            }
+        }
+        .submission {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+
+            button {
+                width: 90%;
+            }
+        }
+    }
+}

@@ -1,0 +1,303 @@
+header {
+    svg g {
+        stroke-width: 3px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--bg-L1-color);
+        height: 10svh;
+        padding-inline: var(--container-pad);
+        user-select: none;
+    }
+}
+
+header nav .logo h1 {
+    display: flex;
+    align-items: center;
+
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+header nav .links {
+    flex-shrink: 0;
+
+    .user {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+        padding: 5px;
+        border-radius: 50px;
+
+        background-color: var(--bg-L2-color);
+        color: var(--txt-L2-color);
+        font-weight: 600;
+
+        li a {
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: 0.3s all ease-in-out;
+            text-transform: capitalize;
+            white-space: nowrap;
+
+            &.active,
+            &:hover {
+                background-color: var(--bg-L1-color);
+                color: var(--txt-L1-color);
+            }
+        }
+    }
+}
+
+header nav .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background-color: #00000050;
+    backdrop-filter: blur(3px);
+
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+}
+
+header nav .navBTN {
+    display: none;
+
+    button {
+        display: inline;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        background-color: var(--bg-L2-color);
+        color: var(--txt-L2-color);
+        aspect-ratio: 1/1;
+        width: 40px;
+        border-radius: 50%;
+
+        svg {
+            margin: 0;
+        }
+
+        path {
+            stroke-width: 2;
+        }
+    }
+}
+
+header nav .user ul li {
+    position: relative;
+    z-index: 99;
+    white-space: nowrap;
+
+    div {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        user-select: none;
+        cursor: pointer;
+
+        img {
+            width: 25px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+        }
+
+        p {
+            max-width: 90%;
+            white-space: nowrap;
+            overflow: hidden !important;
+            text-overflow: ellipsis;
+        }
+
+        span svg {
+            margin-inline-start: -10px;
+            margin-bottom: -5px;
+
+            g {
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 0.384;
+            }
+        }
+    }
+
+    & > ul {
+        position: absolute;
+        pointer-events: none;
+        z-index: 99;
+        opacity: 0;
+        transition: 0.3s all ease-in-out;
+        width: 100%;
+        padding: 10px;
+        background-color: var(--bg-L2-color);
+        color: var(--txt-L2-color);
+        box-shadow: 0 0 10px 5px #33333350;
+        border-radius: 5px;
+        text-align: center;
+        width: auto;
+
+        li {
+            div {
+                display: block;
+                text-align: center;
+                text-transform: capitalize;
+            }
+
+            > *:not(ul) {
+                display: inline-block;
+                font-size: 1em;
+                width: 100%;
+                padding: 5px 10px;
+                text-transform: capitalize;
+                transition: 0.4s all ease-in-out;
+
+                &:hover {
+                    background-color: var(--bg-L1-color);
+                    color: var(--txt-L1-color);
+                }
+            }
+
+            &:not(:last-child) > *:not(ul) {
+                border-bottom: 0.5px solid #999;
+            }
+
+            ul {
+                bottom: 0;
+                inset-inline-start: -50%;
+            }
+        }
+    }
+
+    &:hover > ul {
+        pointer-events: all;
+        opacity: 1;
+    }
+}
+
+header nav .user .authBTNs {
+    display: grid;
+    grid-template-columns: auto repeat(2, 1fr);
+    gap: 10px;
+
+    button {
+        color: var(--theme-color);
+        width: 40px;
+        font-size: 1.5rem;
+    }
+
+    a {
+        background-color: var(--theme-color);
+        padding: 10px 1.5rem;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+        color: inherit;
+        text-transform: uppercase;
+    }
+
+    a:last-child {
+        background-color: var(--bg-L3-color);
+    }
+}
+
+@media (width <= 1080px) {
+    header nav .navBTN {
+        display: block;
+    }
+
+    header nav > .user {
+        display: none;
+    }
+
+    header nav .links {
+        position: fixed;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100svh;
+        background-color: var(--bg-L2-color);
+        box-shadow: 0 0 10px 2px #33333320;
+        top: 0;
+        inset-inline-start: auto;
+        inset-inline-end: 0;
+        transform: translateX(100%);
+        transition: 0.3s all ease-in-out;
+        padding-block: 3svh;
+        overflow-y: auto;
+
+        &:dir(rtl) {
+            transform: translateX(-100%);
+        }
+
+        &.show {
+            transform: translateX(0%);
+        }
+
+        & > * {
+            width: 100%;
+        }
+
+        .user {
+            display: block;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+
+            li {
+                width: 100%;
+
+                a,
+                button {
+                    width: 100%;
+                    text-align: center;
+                    border-radius: 5px;
+                    font-size: 1.3rem;
+                    padding-block: 10px;
+                }
+            }
+        }
+    }
+
+    header nav .overlay.show {
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    header nav .user ul li {
+        div {
+            padding-inline-start: 10px;
+            justify-content: center;
+        }
+
+        & > ul {
+            bottom: 100%;
+        }
+    }
+
+    header nav .user .authBTNs {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+        margin-bottom: -20px;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+        button {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,145 @@
+.input {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    cursor: text;
+    background-color: var(--secondary-color);
+    color: inherit;
+    width: 100%;
+    position: relative;
+    display: flex;
+    font-size: 1rem;
+    opacity: 0.95;
+    padding-top: 16px;
+    margin-block: 5px;
+    overflow: hidden;
+
+    &:has(*:focus) {
+        color: var(--theme-color);
+    }
+
+    .pre {
+        pointer-events: none;
+        text-align: start;
+        position: absolute;
+        top: 50%;
+        inset-inline-start: 20px;
+        font-size: 0.9em;
+        color: inherit;
+        opacity: 0.8;
+    }
+
+    .icon {
+        padding: 0 15px;
+        width: 50px;
+        padding-inline-end: 15px;
+        padding-bottom: 15px;
+        text-align: center;
+        transition: 0.3s all ease-in-out;
+    }
+
+    &:has(.pre) label {
+        transform: translateY(calc(-50% - 12px));
+        font-size: smaller;
+    }
+
+    &:not(:has(.icon)) input {
+        padding-inline-start: 20px;
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        padding: 10px 0;
+        font-size: 0.9em;
+        color: inherit;
+        transition: 0.3s all ease-in-out;
+
+        &::placeholder {
+            opacity: 0;
+        }
+
+        &:focus ~ label,
+        :not(&:placeholder-shown) + label {
+            transform: translateY(calc(-50% - 12px));
+            font-size: smaller;
+        }
+
+        :not(&:placeholder-shown) + .pre {
+            opacity: 0;
+        }
+    }
+
+    button {
+        display: inline-block;
+        padding: 10px;
+        margin-top: -16px;
+        width: 50px;
+        color: inherit;
+    }
+
+    &:not(:has(.icon)) label {
+        inset-inline-start: 20px;
+    }
+
+    label {
+        pointer-events: none;
+        background-color: inherit;
+        position: absolute;
+        inset-inline-start: 25px;
+        top: 50%;
+        transform: translateY(-60%);
+        font-weight: 700;
+        font-size: 1em;
+        text-transform: capitalize;
+        transition-property: top font-size;
+        transition: 0.3s ease-in-out;
+    }
+
+    &:has(.icon) label {
+        inset-inline-start: 45px;
+    }
+
+    textarea {
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        padding: 15px 25px;
+        font-size: inherit;
+        color: inherit;
+        resize: none;
+
+        &::placeholder {
+            opacity: 0;
+        }
+
+        &:focus ~ label,
+        &:not(&:placeholder-shown) ~ label {
+            transform: translateY(calc(-80% - 12px));
+            font-size: smaller;
+        }
+    }
+
+    textarea ~ label {
+        font-size: inherit;
+        top: 15%;
+    }
+
+    .post {
+        width: 50px;
+        text-align: center;
+    }
+
+    .post.rangeValue {
+        min-width: 70px;
+        padding: 0 5px;
+    }
+}
+
+small {
+    display: block;
+    text-align: start;
+}

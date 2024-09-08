@@ -1,0 +1,14 @@
+.dietHistory {
+    .gridView {
+        padding-inline: calc(0.5 * var(--content-padding));
+        padding-top: var(--content-padding);
+
+        .cardContainer {
+            padding: 10px 0;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid var(--brd-color);
+            }
+        }
+    }
+}

@@ -1,0 +1,186 @@
+.ProfileLayout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 4fr);
+    align-items: flex-start;
+    width: 100%;
+    padding: 3svh 0 0;
+    gap: 20px;
+
+    --brd-radius: 10px;
+    --brd-color: rgba(215, 217, 250, 0.5);
+
+    aside {
+        flex-shrink: 0;
+        position: sticky;
+        top: 3svh;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+
+        > div {
+            border-radius: var(--brd-radius);
+            background-color: var(--secondary-color);
+            padding: 20px;
+
+            .sectionTag {
+                padding-block: 5px 20px;
+                padding-inline-start: 20px;
+                font-weight: 800;
+                font-size: 1.1rem;
+            }
+
+            ul > li {
+                border-radius: 5px;
+                transition: 0.2s all ease;
+                margin-top: 2px;
+
+                a {
+                    padding: 8px;
+                    padding-inline-start: 2em;
+                    width: 100%;
+                }
+
+                &:hover,
+                &:has(.active) {
+                    background-color: var(--theme-color);
+                    color: var(--txt-L1-color);
+                }
+            }
+        }
+
+        .viewBTN {
+            display: none;
+        }
+    }
+
+    .profileContent {
+        border-radius: var(--brd-radius);
+        background-color: var(--secondary-color);
+        --content-padding: 20px;
+        padding: var(--content-padding);
+    }
+
+    .TableView {
+        padding-inline: var(--content-padding);
+        overflow-x: auto;
+
+        table {
+            width: 100%;
+            text-align: start;
+            border-collapse: collapse;
+            margin: 20px 0;
+
+            a:hover {
+                color: var(--theme-color);
+            }
+
+            tr {
+                border-bottom: 1px solid var(--brd-color);
+
+                &:last-child {
+                    border-bottom: unset;
+                }
+            }
+
+            td,
+            th {
+                padding: 20px 10px;
+                vertical-align: top;
+            }
+
+            th {
+                align-self: baseline;
+                text-align: start;
+                width: fit-content;
+                white-space: nowrap;
+                min-width: 180px;
+                font-weight: 400;
+                font-weight: 600;
+                text-transform: capitalize;
+
+                span {
+                    display: inline-block;
+                    width: 40px;
+                    text-align: start;
+                    font-size: 1.1rem;
+                }
+            }
+
+            td {
+                width: 100%;
+                min-width: 350px;
+
+                a {
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    text-transform: capitalize;
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 0.9em;
+                    opacity: 0.8;
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+}
+
+@media (width < 1080px) {
+    .ProfileLayout {
+        position: relative;
+        display: grid;
+        grid-template-columns: 100%;
+
+        aside {
+            position: fixed;
+            top: 10vh;
+            inset-inline-start: 0;
+            z-index: 2;
+            height: 90svh;
+            background-color: var(--secondary-color);
+            gap: 0;
+            box-shadow: 0 0 10px -5px var(--txt-L2-color);
+            border-radius: 0 var(--brd-radius) var(--brd-radius) 0;
+            translate: -100% 0;
+            transition: 0.3s translate ease-in-out;
+            overflow-y: unset;
+
+            .viewBTN {
+                display: inline-block;
+                position: absolute;
+                top: 40%;
+                inset-inline-end: 0%;
+                background-color: var(--secondary-color);
+                box-shadow: 0px 0 20px -10px var(--txt-L2-color);
+                aspect-ratio: 1/1;
+                width: 50px;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                color: inherit;
+                translate: 100% 0;
+                transition: 0.3s all ease-in-out;
+            }
+
+            &.show {
+                translate: 0 0;
+
+                .viewBTN {
+                    rotate: 180deg 0 0;
+                }
+            }
+            > div {
+                border-radius: 0;
+            }
+        }
+
+        .profileContent h2 {
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.courses {
+    padding-top: 5svh;
+
+    .courseSlider {
+        .slide {
+            padding-inline: 5px;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: var(--theme-color);
+        }
+    }
+
+    .Foryou {
+        margin-top: 3rem;
+    }
+
+    .grid {
+        margin-top: 3rem;
+    }
+}

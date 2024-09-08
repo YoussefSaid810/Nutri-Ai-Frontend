@@ -1,0 +1,9 @@
+.CurveChart {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: inherit;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}

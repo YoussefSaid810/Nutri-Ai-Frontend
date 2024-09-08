@@ -1,0 +1,87 @@
+.profile {
+    overflow: hidden;
+    border-radius: var(--brd-radius, 10px);
+    padding-inline: var(--content-padding);
+    margin-inline: calc(-1 * var(--content-padding));
+
+    .userInformation {
+        padding-inline: var(--content-padding);
+        table {
+            width: 100%;
+            text-align: start;
+            border-collapse: collapse;
+            margin: 20px 0;
+
+            tr {
+                border-bottom: 1px solid var(--brd-color);
+
+                &:last-child {
+                    border-bottom: unset;
+                }
+            }
+
+            td,
+            th {
+                padding: 20px;
+            }
+
+            th {
+                padding-inline-start: 2vw;
+                text-align: start;
+                width: auto;
+                min-width: 180px;
+                font-weight: 400;
+            }
+
+            td {
+                font-weight: 600;
+                width: 100%;
+                padding-inline-start: 5vw;
+                font-size: 1.1rem;
+
+                span {
+                    font-weight: 700;
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+}
+
+@media (width < 650px) {
+    .profile {
+        .userInformation {
+            table {
+                width: 100%;
+                text-align: start;
+                border-collapse: collapse;
+                margin: 20px 0;
+
+                tr {
+                    border-bottom: 1px solid var(--brd-color);
+
+                    &:last-child {
+                        border-bottom: unset;
+                    }
+                }
+
+                td,
+                th {
+                    padding: 20px 0;
+                    text-align: center;
+                }
+
+                th {
+                    padding-inline-start: 0;
+                    width: auto;
+                    min-width: unset;
+                }
+
+                td {
+                    width: auto;
+                    padding-inline-start: 0;
+                }
+            }
+        }
+    }
+}

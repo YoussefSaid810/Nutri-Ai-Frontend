@@ -1,0 +1,10 @@
+.logo {
+    color: var(--theme-color);
+}
+
+.cls-1 {
+    fill: currentColor;
+}
+.cls-2 {
+    fill: var(--second-txt-color, #e2e2e2);
+}

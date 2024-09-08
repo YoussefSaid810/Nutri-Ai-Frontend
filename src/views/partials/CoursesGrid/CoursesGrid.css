@@ -1,0 +1,250 @@
+.coursesGrid {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        color: var(--txt-L2-color);
+
+        .start {
+            display: flex;
+            align-items: stretch;
+            gap: 10px;
+            width: 30%;
+
+            .viewToggler {
+                cursor: pointer;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                aspect-ratio: 1/1;
+                flex-shrink: 0;
+                border: 3px solid var(--txt-L2-color);
+                color: var(--txt-L2-color);
+                font-size: 1.2rem;
+                transition: 0.2s all ease-in-out;
+
+                &.active {
+                    background-color: var(--theme-color);
+                    color: var(--secondary-color);
+                }
+            }
+        }
+
+        .search {
+            background-color: var(--bg-L2-color);
+            border: 3px solid var(--txt-L2-color);
+            min-width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 15px;
+            gap: 15px;
+
+            input {
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                color: inherit;
+                border: none;
+                outline: none;
+                font-weight: 300;
+                font-size: 1rem;
+            }
+
+            button {
+                color: inherit;
+            }
+        }
+    }
+
+    .grid {
+        min-height: 10svh;
+        transition: 0.3s all ease-in-out;
+        & > .gridTemp:has(.NotFoundImage) {
+            display: block;
+            text-align: center;
+
+            .NotFoundImage {
+                width: 100%;
+                max-width: 700px;
+            }
+        }
+
+        .grid_t_0 {
+            display: grid;
+            grid-template-columns: repeat(4, 25%);
+
+            & > div {
+                padding: 10px;
+            }
+        }
+
+        .grid_t_1 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+
+            .rowCard:not(:last-child) {
+                padding-bottom: 10px;
+                border-bottom: 1px solid var(--txt-L3-color);
+            }
+        }
+    }
+
+    .paging {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        padding: 20px;
+        margin-top: 20px;
+        color: var(--txt-L2-color);
+        gap: 20px;
+
+        & > a {
+            font-size: 1.5rem;
+            color: inherit;
+            opacity: 0.6;
+
+            &.disabled {
+                pointer-events: none;
+                opacity: 0.2;
+            }
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            a {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                position: relative;
+                top: -2px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: inherit;
+                aspect-ratio: 1/1;
+                min-width: 50px;
+                text-align: center;
+
+                &.active {
+                    background-color: var(--theme-color);
+                    color: var(--txt-L1-color);
+                }
+            }
+        }
+    }
+}
+
+@media (width < 800px) {
+    .coursesGrid {
+        .header {
+            gap: 10px;
+            .start {
+                display: flex;
+                align-items: stretch;
+                gap: 10px;
+                width: 50%;
+            }
+
+            .search {
+                width: 50%;
+            }
+        }
+
+        .grid {
+            .grid_t_0 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .grid_t_1 {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+
+                .rowCard:not(:last-child) {
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid var(--txt-L3-color);
+                }
+            }
+        }
+    }
+}
+
+@media (width < 600px) {
+    .coursesGrid {
+        .header {
+            flex-wrap: wrap;
+            gap: 15px;
+
+            .start {
+                width: 100%;
+
+                .sort {
+                    width: 100%;
+                }
+
+                .viewToggler {
+                    display: none;
+                }
+            }
+
+            .search {
+                width: 100%;
+            }
+        }
+
+        .grid {
+            .grid_t_0 {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+        }
+
+        .paging {
+            flex-wrap: wrap;
+            padding: 0px;
+            gap: 8px;
+
+            & > a {
+                font-size: 0.9rem;
+                color: inherit;
+
+                &.disabled {
+                    pointer-events: none;
+                    opacity: 0.3;
+                }
+            }
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+
+                a {
+                    position: relative;
+                    top: -2px;
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                    border: 2px solid var(--txt-L2-color);
+                    color: inherit;
+                    aspect-ratio: 1/1;
+                    min-width: 30px;
+                    padding: 10px;
+                    text-align: center;
+
+                    &.active {
+                        background-color: var(--theme-color);
+                        color: var(--txt-L1-color);
+                    }
+                }
+            }
+        }
+    }
+}

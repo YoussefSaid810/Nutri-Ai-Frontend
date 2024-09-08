@@ -1,0 +1,4 @@
+.dietHistory .gridView {
+    display: grid;
+    gap: 20px;
+}

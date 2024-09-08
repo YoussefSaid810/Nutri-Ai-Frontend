@@ -1,0 +1,188 @@
+.imageEditor {
+    .viewer {
+        text-align: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+
+        .viewerContainer {
+            position: relative;
+            width: 500px;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            border: 4px dotted var(--bg-L1-color);
+            background-color: var(--txt-L1-color);
+
+            img {
+                width: 100%;
+                height: 100%;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                object-position: 50% 50%;
+            }
+        }
+
+        .buttonCTRLs {
+            display: inline-flex;
+            flex-direction: row-reverse;
+            gap: 5px;
+            inset-inline-end: calc(25% + 5px);
+            bottom: 10px;
+
+            button {
+                position: relative;
+                background-color: var(--theme-color);
+                aspect-ratio: 1/1;
+                width: 50px;
+
+                input {
+                    cursor: pointer !important;
+                    position: absolute;
+                    inset: 0;
+                    opacity: 0;
+                }
+
+                &:disabled {
+                    filter: grayscale(1);
+                }
+            }
+        }
+    }
+
+    .modal,
+    .overlay {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1500;
+    }
+
+    .modal {
+        opacity: 0;
+        pointer-events: none;
+
+        &.show {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.768);
+        z-index: 1500;
+    }
+
+    .innerCTRLS {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1501;
+        background-color: var(--bg-L2-color);
+        width: 60%;
+        padding: 2rem 2rem 1rem;
+
+        .innerViewer {
+            position: relative;
+            padding: 0;
+            aspect-ratio: 1/1;
+            width: 500px;
+            border: 4px dotted var(--bg-L1-color);
+            background-color: var(--txt-L1-color);
+            overflow: hidden;
+            margin-bottom: 1rem;
+
+            img {
+                position: absolute;
+                width: 100%;
+                transform-origin: 0 0;
+                /* transform: translate(-50%, -50%); */
+            }
+        }
+
+        .inputEditor {
+            width: 100%;
+        }
+
+        .saveCTRLS {
+            display: flex;
+            width: 100%;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: row-reverse;
+            gap: 10px;
+            margin-top: 10px;
+
+            button {
+                background-color: var(--theme-color);
+                padding: 10px 20px;
+                color: var(--txt-L1-color);
+                text-transform: capitalize;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+
+@media (width <= 1080px) {
+    .imageEditor {
+        .innerCTRLS {
+            width: 90%;
+
+            .innerViewer {
+                position: relative;
+                padding: 0;
+                aspect-ratio: 1/1;
+                width: 70%;
+            }
+
+            .inputEditor {
+                width: 100%;
+            }
+
+            .saveCTRLS {
+                display: flex;
+                width: 100%;
+                justify-content: flex-start;
+                align-items: center;
+                flex-direction: row-reverse;
+                gap: 10px;
+                margin-top: 10px;
+
+                button {
+                    background-color: var(--theme-color);
+                    padding: 10px 20px;
+                    color: var(--txt-L1-color);
+                    text-transform: capitalize;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (width <= 700px) {
+    .imageEditor {
+        .viewer {
+            .viewerContainer {
+                width: 300px;
+            }
+        }
+    }
+}
+
+@media (width <= 500px) {
+    .imageEditor {
+        .viewer {
+            .viewerContainer {
+                width: 100%;
+            }
+        }
+    }
+}

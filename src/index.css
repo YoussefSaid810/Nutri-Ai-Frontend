@@ -1,0 +1,141 @@
+:root {
+    /* -- Theme Colors --*/
+    /* --theme-color: #26a675; */
+    --theme-color: #3c78e0;
+    --theme-color-rgb: 60, 120, 224;
+    --secondary-color: #eaeaea;
+    --third-color: #d6dada;
+
+    /* -- Site Settings --*/
+    --txt-L1-color: #fff;
+    --txt-L2-color: #000;
+    --txt-L3-color: #999;
+    --bg-L1-color: #171717;
+    --bg-L2-color: #fff;
+    --bg-L3-color: #333;
+
+    --model-bg-color: #dbdbdb;
+
+    --container-pad: 8vw;
+    --scrollbar-size: 5px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: currentColor;
+    cursor: pointer;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+:dir(rtl) *.dirChange {
+    rotate: 0 180deg;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
+    transition: 0.3s all ease-in-out;
+}
+
+:hover::-webkit-scrollbar {
+    background-color: #ffffff00;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff38;
+    border-radius: 20px;
+    transition: 0.3s all ease-in-out;
+}
+
+:hover::-webkit-scrollbar-thumb {
+    background-color: var(--theme-color);
+}
+
+main.dark :hover::-webkit-scrollbar-thumb {
+    background-color: var(--theme-color);
+}
+
+html {
+    /* font-size: 32px; */
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+main.dark {
+    --theme-color: #47a8f3;
+    --secondary-color: #1b1b2b;
+    --third-color: #2d3441;
+
+    /* -- Site Settings --*/
+    --txt-L1-color: #fff;
+    --txt-L2-color: #fff;
+    --txt-L3-color: #333;
+    --bg-L1-color: #1b1b2b;
+    --bg-L2-color: #161623;
+    --bg-L3-color: #323251;
+
+    --model-bg-color: #1b1b2b;
+}
+
+.errorList {
+    padding: 10px 20px;
+    background-color: rgb(252, 195, 195);
+    color: rgb(37, 12, 12);
+
+    &.success {
+        background-color: rgb(195, 252, 204);
+        color: rgb(12, 37, 18);
+    }
+
+    &:not(:has(li, p)) {
+        display: none;
+    }
+
+    ul {
+        list-style: circle;
+        padding-inline-start: 20px;
+    }
+
+    li,
+    p {
+        color: inherit;
+        font-size: 0.8em;
+        font-weight: 600;
+        text-align: start;
+    }
+
+    p {
+        text-align: center;
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "short_name": "Nutri-AI",
+    "name": "Nutri-AI",
+    "description": "An ai to generate user's dietary meals based on their preferences and body needs",
+    "developer": {
+        "name": "Nutri-AI Team",
+        "url": "/about-us"
+    },
+    "icons": [
+        {
+            "src": "icons/icon16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon24.png",
+            "sizes": "24x24",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon64.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "icons/icon512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#3c78e0",
+    "background_color": "#1B1B2B",
+    "devTool": false
+}

@@ -1,0 +1,7 @@
+img {
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    cursor: pointer;
+    background-color: var(--bg-L2-color);
+}

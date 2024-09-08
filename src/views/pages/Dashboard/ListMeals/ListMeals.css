@@ -1,0 +1,50 @@
+.ListMeals {
+    .paging {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        padding: 20px;
+        margin-top: 20px;
+        color: var(--txt-L2-color);
+        gap: 20px;
+
+        & > a {
+            font-size: 1.5rem;
+            color: inherit;
+            opacity: 0.6;
+
+            &.disabled {
+                pointer-events: none;
+                opacity: 0.2;
+            }
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            a {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                position: relative;
+                top: -2px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: inherit;
+                aspect-ratio: 1/1;
+                min-width: 50px;
+                text-align: center;
+
+                &.active {
+                    background-color: var(--theme-color);
+                    color: var(--txt-L1-color);
+                }
+            }
+        }
+    }
+}

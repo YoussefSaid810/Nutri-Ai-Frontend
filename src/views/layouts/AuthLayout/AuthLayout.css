@@ -1,0 +1,32 @@
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1d1d1d;
+    height: 100svh;
+    width: 100svw;
+
+    .innerContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #eee;
+        color: #000;
+        height: 75svh;
+        width: 75svw;
+
+        & > section {
+            height: inherit;
+            width: 100%;
+        }
+    }
+}
+
+@media (width <= 1024px) {
+    .auth {
+        .innerContainer {
+            height: 90svh;
+            width: 90svw;
+        }
+    }
+}

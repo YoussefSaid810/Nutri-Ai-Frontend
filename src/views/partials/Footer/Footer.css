@@ -1,0 +1,17 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-L1-color);
+    min-height: 5svh;
+    border-radius: var(--br-radius) var(--br-radius) 0 0;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+
+    p span {
+        color: var(--theme-color);
+        transition: 0.3s color ease-in-out;
+        font-weight: 600;
+    }
+}

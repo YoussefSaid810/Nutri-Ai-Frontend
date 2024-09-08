@@ -1,0 +1,113 @@
+.ChatApp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: calc(-1 * var(--content-padding));
+
+    & > * {
+        width: 100%;
+    }
+
+    .ChatHeader {
+        user-select: none;
+        background-color: var(--theme-color);
+        color: var(--secondary-color);
+        padding: var(--content-padding);
+        border-radius: var(--brd-radius);
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+        height: 10vh;
+
+        .ChattingInfo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+
+            img {
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                width: 50px;
+            }
+
+            .name {
+                font-weight: 700;
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .MessageViews {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: flex-end; */
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin-top: var(--content-padding);
+        padding: var(--content-padding);
+        border-radius: var(--brd-radius);
+        height: 60vh;
+        gap: 20px;
+
+        .message {
+            display: flex;
+            justify-content: flex-start;
+
+            .view {
+                max-width: 80%;
+                background-color: var(--theme-color);
+                color: var(--secondary-color);
+                font-size: 1.1rem;
+                padding: 20px;
+                --msg-brd: 20px;
+                border-radius: var(--msg-brd);
+            }
+
+            &.sender {
+                justify-content: flex-end;
+
+                .view {
+                    background-color: var(--third-color);
+                    color: var(--txt-L2-color);
+                }
+            }
+        }
+    }
+
+    .SendingControls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--content-padding);
+        box-shadow: 0 0 5px 5px #00000010;
+        gap: 20px;
+
+        textarea {
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: var(--third-color);
+            resize: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            height: calc(1.5rem + 27px);
+            border-radius: 50px;
+            font-family: inherit;
+        }
+
+        .sendBTN {
+            background-color: var(--theme-color);
+            width: 60px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            color: var(--txt-L1-color);
+        }
+    }
+}

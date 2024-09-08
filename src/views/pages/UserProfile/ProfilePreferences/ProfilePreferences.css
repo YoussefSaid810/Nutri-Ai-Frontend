@@ -1,0 +1,46 @@
+.profilePreferences {
+    h2 {
+        margin-inline-start: var(--content-padding);
+        margin-block: calc(0.5 * var(--content-padding)) var(--content-padding);
+    }
+
+    .courseSlider {
+        padding-inline: 20px;
+        .slide {
+            padding-inline: 5px;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: var(--theme-color);
+        }
+    }
+
+    .preferences {
+        margin-top: 5svh;
+        .gridView {
+            display: grid;
+            padding-inline: 20px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 10px;
+        }
+    }
+}
+
+@media (width < 1080px) {
+    .profilePreferences .preferences .gridView {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (width < 800px) {
+    .profilePreferences .preferences .gridView {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (width < 700px) {
+    .profilePreferences .preferences .gridView {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
